@@ -1,0 +1,275 @@
+.pessoa-form-page {
+  min-height: 100vh;
+  background: #f5f3ff;
+  padding: 32px;
+}
+
+.form-header {
+  margin-bottom: 32px;
+}
+
+.form-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #7b5cf6;
+  background-color: #faf7ff;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.form-input::placeholder {
+  color: #7b5cf6;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #8b5cf6;
+  border-color: #8b5cf6;
+}
+
+.endereco-section {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.endereco-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.endereco-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.endereco-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  color: #8b5cf6;
+}
+
+.endereco-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .endereco-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: end;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (min-width: 640px) {
+  .form-buttons {
+    flex-direction: row;
+  }
+}
+
+.btn-cancelar {
+  padding: 12px 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #374151;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancelar:hover {
+  background: #f9fafb;
+}
+
+.btn-cancelar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #6b7280, 0 0 0 4px rgba(107, 114, 128, 0.1);
+}
+
+.btn-salvar {
+  padding: 12px 32px;
+  background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-salvar:hover {
+  background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 100%);
+  transform: scale(1.05);
+}
+
+.btn-salvar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #8b5cf6, 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.form-footer {
+  margin-top: 24px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Checkbox */
+.form-checkbox {
+  margin-top:40px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8b5cf6;
+  border-radius: 4px;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  background-color: #faf7ff;
+  display: inline-block;
+}
+
+.form-checkbox:checked {
+  background-color: #8b5cf6;
+  border-color: #8b5cf6;
+}
+
+.form-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+}
+
+.form-checkbox:hover {
+  border-color: #7c3aed;
+}
+
+.form-checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #8b5cf6, 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.checkbox-label {
+  margin-top:40px;
+  margin-left: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center; /
+  gap: 11px;
+  cursor: pointer;
+}
+
+.nome-ativo-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .nome-ativo-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nome-ativo-row .form-field {
+    flex: 1;
+  }
+
+  .nome-ativo-row .checkbox-wrapper {
+    flex-shrink: 0;
+  }
+
+  .toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 9999;
+    opacity: 0.95;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+
+  .toast.sucesso {
+    background-color: #4caf50; /* verde */
+  }
+
+  .toast.erro {
+    background-color: #f44336; /* vermelho */
+  }
+
+}
