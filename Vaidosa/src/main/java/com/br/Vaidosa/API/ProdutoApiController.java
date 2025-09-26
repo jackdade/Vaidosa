@@ -36,4 +36,6 @@ public class ProdutoApiController {
             return ResponseEntity.badRequest().body("{\"mensagem\": \"" + ex.getMessage() + "\"}");
         }
     }
+
+
 }
