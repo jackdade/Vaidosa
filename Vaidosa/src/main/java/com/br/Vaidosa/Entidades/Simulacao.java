@@ -15,7 +15,7 @@ public class Simulacao {
     @Column(name = "nomePessoa", nullable = false)
     private String nomePessoa;
 
-    @Column(name = "cpf", nullable = false, unique = true)
+    @Column(name = "cpf", nullable = false)
     private String cpf;
 
     @Column(name = "valorSegurado")

@@ -20,7 +20,7 @@ public class Produto {
     @Column(name = "idadeMaxima")
     private Integer idadeMaxima;
 
-    @Column(name = "taxaJuros")
+    @Column(name = "taxaJuros", precision = 11, scale = 4)
     private BigDecimal taxaJuros;
 
     @Column(name = "valorMinimoPremio")

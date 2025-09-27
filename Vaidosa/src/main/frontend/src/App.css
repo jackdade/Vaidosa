@@ -1,0 +1,275 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.app-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.app-wrapper {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+
+.tabs-container {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+}
+
+.tab-left {
+  border-radius: 8px 0 0 8px;
+}
+
+.tab-right {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+.tab-active {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+
+
+.button-icon {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.date-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+  font-size: 14px;
+}
+
+.date-input-container {
+  position: relative;
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 24px;
+}
+
+.form-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #374151;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.simulate-button {
+  background-color: #059669;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.simulate-button:hover {
+  background-color: #047857;
+}
+
+.add-button {
+  margin-top: 16px;
+  background-color: #059669;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.add-button:hover {
+  background-color: #047857;
+}
+
+/* Result container */
+.result-container {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.result-label {
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.result-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 12px;
+}
+
+.result-option {
+  font-weight: 600;
+  color: #15803d;
+  margin-bottom: 4px;
+}
+
+
+
+.table-head th {
+  text-align: left;
+}
+
+.table-body td {
+  text-align: left;
+}
+
+.row-even {
+  background-color: white;
+}
+
+.row-odd {
+  background-color: #f9fafb;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .table-th,
+  .table-td {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+.table-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.row-even {
+  background-color: white;
+}
+
+.row-odd {
+  background-color: #f9fafb;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .table-th,
+  .table-td {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}

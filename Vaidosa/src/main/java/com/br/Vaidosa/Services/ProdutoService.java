@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -49,4 +50,14 @@ public class ProdutoService {
 
         return produtoRepository.save(produto);
     }
+
+    public List<ProdutoViewModel> listarTodos() {
+        List<Produto> produtos = produtoRepository.findAll();
+
+        return produtos.stream()
+                .map(ProdutoViewModel::new)
+                .toList();
+    }
+
+
 }

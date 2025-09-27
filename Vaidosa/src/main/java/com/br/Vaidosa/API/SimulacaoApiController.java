@@ -11,10 +11,7 @@ import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/Simulacao")
@@ -23,8 +20,8 @@ public class SimulacaoApiController {
     @Autowired
     SimulacaoService simulacaoService;
 
-    @PostMapping("/simulacao")
-    public ResponseEntity<?> simulacao(@RequestBody SimulacaoViewModel simulacaoViewModel) {
+    @PostMapping("/simular")
+    public ResponseEntity<?> simular(@RequestBody SimulacaoViewModel simulacaoViewModel) {
 
         try {
 
@@ -39,6 +36,15 @@ public class SimulacaoApiController {
         }
         catch (ValidationException ex) {
             return ResponseEntity.badRequest().body("{\"mensagem\": \"" + ex.getMessage() + "\"}");
+        }
+    }
+
+    @GetMapping("/listar")
+    public ResponseEntity<?> listarTodos() {
+        try {
+            return ResponseEntity.ok(simulacaoService.listarTodos());
+        } catch (Exception ex) {
+            return ResponseEntity.status(500).body("Erro ao listar produtos");
         }
     }
 

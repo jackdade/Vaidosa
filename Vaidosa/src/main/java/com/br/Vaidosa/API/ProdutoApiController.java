@@ -23,19 +23,26 @@ public class ProdutoApiController {
 
         Produto existente = produtoService.buscarProdutoNome(produtoViewModel.getNome());
         if (existente != null) {
-            return ResponseEntity.badRequest().body("{\"mensagem\": \"Já existe um produto com esse nome!!\"}");
+            return ResponseEntity.badRequest().body("Já existe um produto com esse nome!!");
         }
 
         try {
-            Produto produto = produtoService.inserir(produtoViewModel);
-            return ResponseEntity.status(201).body(new ProdutoViewModel(produto));
-        }  catch (DataIntegrityViolationException ex) {
-            return ResponseEntity.badRequest().body("Erro ao inserrir");
-        }
-        catch (ValidationException ex) {
-            return ResponseEntity.badRequest().body("{\"mensagem\": \"" + ex.getMessage() + "\"}");
+            produtoService.inserir(produtoViewModel);
+            return ResponseEntity.status(201).body("Salvo com sucesso!");
+        } catch (DataIntegrityViolationException ex) {
+            return ResponseEntity.badRequest().body("Erro ao inserir");
+        } catch (ValidationException ex) {
+            return ResponseEntity.badRequest().body(ex.getMessage());
         }
     }
 
-
+    @GetMapping("/listar")
+    public ResponseEntity<?> listarTodos() {
+        try {
+            return ResponseEntity.ok(produtoService.listarTodos());
+        } catch (Exception ex) {
+            return ResponseEntity.status(500).body("Erro ao listar produtos");
+        }
+    }
 }
+
